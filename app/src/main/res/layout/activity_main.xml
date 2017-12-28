@@ -36,7 +36,7 @@
             android:textColorHint="#cccccc" />
 
         <Button
-            android:id="@+id/button_send"
+            android:id="@+id/button_sendMessage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"

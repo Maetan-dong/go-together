@@ -1,4 +1,4 @@
-package gotogether.maetandong.com.gotogether;
+package gotogether.maetandong.com.gotogether.activity;
 
 import android.app.Activity;
 import android.app.NotificationManager;
@@ -8,20 +8,33 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+import gotogether.maetandong.com.gotogether.HttpUtil;
+import gotogether.maetandong.com.gotogether.R;
+
+public class MainActivity extends Activity implements View.OnClickListener{
 
     private static final int NOTIFY_ID = 100;
     private static final String YES_ACTION = "gotogether.maetandong.com.gotogether.YES_ACTION";
     private static final String NO_ACTION = "gotogether.maetandong.com.gotogether.NO_ACTION";
 
     NotificationManager mNotificationManager;
+    Button mButtonSendMessage;
+    EditText mEditMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mButtonSendMessage = findViewById(R.id.button_sendMessage);
+        mEditMessage = findViewById(R.id.edit_message);
+
+        mButtonSendMessage.setOnClickListener(this);
+
 
         findViewById(R.id.button_notify).setOnClickListener(new View.OnClickListener(){
             @Override
@@ -85,6 +98,20 @@ public class MainActivity extends Activity {
                     Toast.makeText(this, "NO", Toast.LENGTH_SHORT).show();
                     break;
             }
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.button_sendMessage:
+                try {
+                    new HttpUtil(mEditMessage.getText().toString()).run();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                break;
+
         }
     }
 }
