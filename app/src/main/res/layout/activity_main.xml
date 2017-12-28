@@ -45,5 +45,15 @@
             android:text="SEND"
             android:textAppearance="@style/MainFont.Small" />
 
+        <Button
+            android:id="@+id/button_notify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_send_message_bg"
+            android:padding="15dp"
+            android:text="Notification"
+            android:textAppearance="@style/MainFont.Small" />
+
     </LinearLayout>
 </RelativeLayout>
