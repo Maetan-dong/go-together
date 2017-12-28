@@ -14,7 +14,6 @@ public class MainActivity extends Activity {
 
     private static final int NOTIFY_ID = 100;
     private static final String YES_ACTION = "gotogether.maetandong.com.gotogether.YES_ACTION";
-    private static final String MAYBE_ACTION = "gotogether.maetandong.com.gotogether.MAYBE_ACTION";
     private static final String NO_ACTION = "gotogether.maetandong.com.gotogether.NO_ACTION";
 
     NotificationManager mNotificationManager;
@@ -45,9 +44,6 @@ public class MainActivity extends Activity {
     private void showActionButtonsNotification() {
         Intent yesIntent = getNotificationIntent();
         yesIntent.setAction(YES_ACTION);
-
-        Intent maybeIntent = getNotificationIntent();
-        maybeIntent.setAction(MAYBE_ACTION);
 
         Intent noIntent = getNotificationIntent();
         noIntent.setAction(NO_ACTION);
@@ -84,9 +80,6 @@ public class MainActivity extends Activity {
             switch (intent.getAction()) {
                 case YES_ACTION:
                     Toast.makeText(this, "YES", Toast.LENGTH_SHORT).show();
-                    break;
-                case MAYBE_ACTION:
-                    Toast.makeText(this, "MAYBE", Toast.LENGTH_SHORT).show();
                     break;
                 case NO_ACTION:
                     Toast.makeText(this, "NO", Toast.LENGTH_SHORT).show();
