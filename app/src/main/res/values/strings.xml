@@ -3,4 +3,5 @@
     <string name="yes">yes</string>
     <string name="no">no</string>
     <string name="maybe">maybe</string>
+    <string name="notificationChannelId" translatable="false">notificationChannelId</string>
 </resources>

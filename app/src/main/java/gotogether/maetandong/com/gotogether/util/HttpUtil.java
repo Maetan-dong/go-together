@@ -1,4 +1,4 @@
-package gotogether.maetandong.com.gotogether;
+package gotogether.maetandong.com.gotogether.util;
 
 import android.util.Log;
 

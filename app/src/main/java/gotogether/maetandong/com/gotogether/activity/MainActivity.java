@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import gotogether.maetandong.com.gotogether.HttpUtil;
+import gotogether.maetandong.com.gotogether.util.HttpUtil;
 import gotogether.maetandong.com.gotogether.R;
 
 public class MainActivity extends Activity implements View.OnClickListener{
